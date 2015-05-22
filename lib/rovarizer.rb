@@ -28,21 +28,28 @@ end
 def derovarize(cipher:)
 
   consonant = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z']
+  # Variable to put the crypted text in.
   decrypt = ""
+  # Splits the string up to individual characters in a array
   text = cipher.split(//)
 
   text.each do |char|
 
     if consonant.include? char
+      # Puts char in decrypt
       decrypt << char
+      # Delets first and second characters in array
       text.delete_at(0)
       text.delete_at(1)
 
+    # Puts char in decrypt if char is not a consonant
     else
       decrypt << char
 
     end
   end
+
+  # Returns decrypted string
   return decrypt
 
 end
