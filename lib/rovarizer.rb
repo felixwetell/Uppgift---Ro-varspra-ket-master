@@ -1,20 +1,26 @@
 def rovarize(cleartext:)
 
   consonant = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z']
+  # Variable to put the crypted text in.
   crypt = ""
+  # Splits the string up to individual characters in a array
   text = cleartext.split(//)
 
   text.each do |char|
 
+    # Checks if variable char exsist in consonant
     if consonant.include? char
+      # Puts char in crypt
       crypt << char + "o" + char
 
+    # Puts char in crypt if char is not a consonant
     else
       crypt << char
 
     end
   end
 
+  # Returns cryted string
   return crypt
 
 end
